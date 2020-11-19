@@ -90,10 +90,18 @@
     border: none;
 }
 
-.primary 
+.primary:hover {
+    background-color: #fff;
+    color: #242424;
+    border: none;
+}
 
-.blue {
-    background-color: #276afb;
+.green {
+    background-color: #25ce4a;
     color: #fff;
     border: none;
+}
+
+.green:hover {
+    background-color: #242424;
 }

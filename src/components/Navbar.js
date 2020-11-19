@@ -2,11 +2,24 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { MdFingerprint} from 'react-icons/md' 
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { Button } from './Button'
 
 function Navbar() {
-    const [click, setClick] = useState(false)
+    const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true)
 
     const handleClick = () => setClick(!click)
+    const closeMobileMenu = () => setClick(false)
+
+    const showButton = () => {
+        if(window.innerWidth <= 960) {
+            setButton(false)
+            }else {
+                setButton(true)
+            }
+    }
+
+    window.addEventListener('resize', showButton);
 
 
     return (
@@ -39,11 +52,11 @@ function Navbar() {
                     <li className="nav-btn">
                         {button ? (
                             <Link to='/sign-up' className="btn-link">
-                                <Button buttonstyle='btn--outline'>SIGN UP</Button>
+                                <Button buttonStyle='btn--outline'>SIGN UP</Button>
                             </Link>
                         ):(
                             <Link to='/sign-up' className="btn-link">
-                                <Button buttonstyle='btn--outline' buttonsize='btn--mobile'>SIGN UP</Button>
+                                <Button buttonStyle='btn--outline' buttonSize='btn--mobile'>SIGN UP</Button>
                             </Link>
                         )}
                     </li>
