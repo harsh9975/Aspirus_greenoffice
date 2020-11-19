@@ -22,6 +22,7 @@ function Signup() {
         }catch{
             setError('Failed to create error')
         }
+        setLoading(false)
     }
     return (
         <div>
