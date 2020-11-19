@@ -1,5 +1,6 @@
 import React, {useRef, useState} from 'react'
 import { useAuth } from '../contexts/AuthContext'
+import { Link, useHistory } from 'react-router-dom'
 
 function Signup() {
     const emailRef = useRef()
@@ -8,6 +9,7 @@ function Signup() {
     const { signup } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
+    const history  = useHistorytory()
 
 
     async function handleSubmit(e) {
@@ -19,6 +21,7 @@ function Signup() {
             setError('')
             setLoading(true)
             await signup(emailRef.current.value, passwordRef.current.value, passwordConfirmRef.current.value)
+            history.push("/")
         }catch{
             setError('Failed to create error')
         }
@@ -38,7 +41,9 @@ function Signup() {
             <input type="password" ref={passwordConfirmRef} required />
             <button disabled={loading} type="submit">Sign Up</button>
             </form>
+            <h4>Have an Account? <Link to="/login">Log In</Link></h4>
         </div>
+
     )
 }
 
