@@ -5,7 +5,7 @@ function Signup() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const { signup } = useAuth()
+    const { signup, currentUser } = useAuth()
     const [error, setError] = useState('')
     const [loading, setLoading] = useState(false)
 
@@ -27,6 +27,7 @@ function Signup() {
     return (
         <div>
             <h2>Sign Up</h2>
+            {currentUser && currentUser.email}
             {error && <h4>{error}</h4>}
             <form onSubmit={handleSubmit}>
             <label>Email</label>
@@ -35,8 +36,8 @@ function Signup() {
             <input type="password" ref={passwordRef} required />
             <label>Confirm Password</label>
             <input type="password" ref={passwordConfirmRef} required />
-            </form>
             <button disabled={loading} type="submit">Sign Up</button>
+            </form>
         </div>
     )
 }
