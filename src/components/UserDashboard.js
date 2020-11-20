@@ -4,7 +4,7 @@ import { useAuth } from '../contexts/AuthContext'
 
 
 
-function Dashboard() {
+function UserDashboard() {
     const [error, setError] = useState("")
     const { logout } = useAuth()
     const history = useHistory()
@@ -35,4 +35,4 @@ function Dashboard() {
     )
 }
 
-export default Dashboard
+export default UserDashboard
