@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react'
 import { useAuth } from '../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
+
 function Login() {
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -26,13 +27,19 @@ function Login() {
         <div>
             <h2>Log In</h2>
            
-            {error && <h4>{error}</h4>}
+            {error && <h4 className="alert alert-danger">{error}</h4>}
             <form onSubmit={handleSubmit}>
+            <div className="form-group">
             <label>Email</label>
-            <input type="email" ref={emailRef} required />
+            <input className="form-control" type="email" ref={emailRef} required />
+            </div>
+            
+            <div className="form-group">
             <label>Password</label>
-            <input type="password" ref={passwordRef} required />
-            <button disabled={loading} type="submit">Login</button>
+            <input className="form-control" type="password" ref={passwordRef} required />
+            </div>
+            
+            <button disabled={loading} className="btn btn-primary" type="submit">Login</button>
             </form>
             <h4>Need an Account? <Link to="/signup">SignUp</Link></h4>
         </div>

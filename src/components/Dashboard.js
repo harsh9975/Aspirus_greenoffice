@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
+
 
 
 function Dashboard() {
@@ -19,12 +20,17 @@ function Dashboard() {
             setError('Failes to logout')
         }
     }
+
+
     return (
         <div>
             {error && <h4>{error}</h4>}
             Dashboard
             <h2>Profile</h2>
             <button variant="link" onClick={handleLogout}>Log out</button>
+            <button><Link to="/status">Application Status</Link></button>
+            <button><Link to="/newapplication">Apply for New Form</Link></button>
+            
         </div>
     )
 }
