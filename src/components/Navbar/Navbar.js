@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from '../Button/Button';
+
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { MdFingerprint } from 'react-icons/md';
@@ -38,37 +38,36 @@ function Navbar() {
         <nav className='navbar'>
           <div className='navbar-container container'>
            
-            <span to='/' className='navbar-logo' onClick={closeMobileMenu}>
-              <MdFingerprint className='navbar-icon' />
-              greenOffice
-            </span>
+            <Link to="/"  className='navbar-logo' onClick={closeMobileMenu}>
+              GREEN OFFICE
+            </Link>
           
             <div className='menu-icon' onClick={handleClick}>
               {click ? <FaTimes /> : <FaBars />}
             </div>
             <ul className={click ? 'nav-menu active' : 'nav-menu'}>
               <li className='nav-item'>
-                <span to='/' className='nav-links' onClick={closeMobileMenu}>
+                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                   Home
-                </span>
+                </Link>
               </li>
               <li className='nav-item'>
-                <span
-                  to='/services'
+                <Link
+                  to="/login"
                   className='nav-links'
                   onClick={closeMobileMenu}
                 >
-                  Services
-                </span>
+                  Login
+                </Link>
               </li>
               <li className='nav-item'>
-                <span
-                  to='/products'
+                <Link
+                  to="/admindashboard"
                   className='nav-links'
                   onClick={closeMobileMenu}
                 >
-                  Products
-                </span>
+                  Admin Login
+                </Link>
               </li>
               
             </ul>
