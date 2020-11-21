@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 
 function Signup() {
@@ -28,18 +28,28 @@ function Signup() {
         setLoading(false)
     }
     return (
-        <div>
+        <div className="sign_main container" >
             <h2>Sign Up</h2>
            
             {error && <h4>{error}</h4>}
             <form onSubmit={handleSubmit}>
+            <div className="form-group">
             <label>Email</label>
-            <input type="email" ref={emailRef} required />
+            <input className="form-control" type="email" ref={emailRef} required />
+            </div>
+            
+            <div className="form-group">
             <label>Password</label>
-            <input type="password" ref={passwordRef} required />
-            <label>Confirm Password</label>
-            <input type="password" ref={passwordConfirmRef} required />
-            <button disabled={loading} type="submit">Sign Up</button>
+            <input className="form-control" type="password" ref={passwordRef} required />
+            </div>
+
+            <div className="form-group">
+            <label>Password</label>
+            <input className="form-control" type="password" ref={passwordConfirmRef} required />
+            </div>
+            
+            <button disabled={loading} className="btn btn-primary" type="submit">Sign Up</button>
+            
             </form>
             <h4>Have an Account? <Link to="/login">Log In</Link></h4>
         </div>

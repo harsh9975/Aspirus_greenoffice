@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '../../contexts/AuthContext'
 import { Link, useHistory } from 'react-router-dom'
 
 function Login() {
@@ -24,7 +24,7 @@ function Login() {
         setLoading(false)
     }
     return (
-        <div>
+        <div className="container">
             <h2>Log In</h2>
            
             {error && <h4 className="alert alert-danger">{error}</h4>}
