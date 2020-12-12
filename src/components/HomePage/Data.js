@@ -8,7 +8,7 @@ export const homeObjOne = {
       'No need to stand in the queue,this pandemic we have made your work easy seating at home',
     buttonLabel: 'Get Started',
     imgStart: '',
-    img: 'images/heroimg.svg',
+    img: 'images/amb.png',
     alt: 'lol'
   };
 
@@ -22,7 +22,7 @@ export const homeObjOne = {
       'We have you covered no matter where you are located. Over 140 locations worldwide to ensure you have access anytime',
     buttonLabel: 'Learn More',
     imgStart: '',
-    img: 'images/1.svg',
+    img: 'images/map.jpg',
     alt: 'Vault'
   };
   
@@ -49,7 +49,7 @@ export const homeObjOne = {
     description:
       'Never ever have to worry again about saved reciepts. We store your data, so you can access it anytime.',
     buttonLabel: 'Sign Up Now',
-    imgStart: 'start',
+    imgStart: 'start', 
     img: 'images/3.svg',
     alt: 'Vault'
   };
